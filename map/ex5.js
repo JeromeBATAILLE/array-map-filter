@@ -13,6 +13,10 @@ Tableau renvoyé par multiplyOddIndices:
 */
 
 function multiplyOddIndices(numbers) {
+  const oddAuCarre = numbers.map(function(caseValue, index) {
+     return index % 2 != 0  && index > 1 ? caseValue * index : caseValue
+  });
+  return oddAuCarre
 }
 
 module.exports = multiplyOddIndices;

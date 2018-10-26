@@ -60,6 +60,28 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
+  const isFresh = movies.map(function(movy) {
+    if (movy.rating > 75) {
+      return {
+        name: movy.name,
+        rating: movy.rating,
+        label: 'certified fresh'
+      }
+    } else if (movy.rating < 60) {
+      return {
+        name: movy.name,
+        rating: movy.rating,
+        label: 'rotten'
+      }
+    } else {
+      return {
+        name: movy.name,
+        rating: movy.rating,
+        label: 'fresh'
+      }
+    }
+  });
+  return isFresh
 }
 
 
